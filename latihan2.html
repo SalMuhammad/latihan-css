@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>latihan grid 2</title>
+  <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    .i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+    }
+    .container {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(16, 1fr);
+    }
+
+    .header {
+      background-color: #152241;
+      color: white;
+    }
+    .menu {
+      background-color: rgb(237, 62,80);
+      color: white;
+      grid-column: 2 / 5;
+    }
+    .hero {
+      background-color: rgb(76, 134,190);
+      color: white;
+      grid-column-start: 1;
+      grid-column-end: -1;
+      grid-row: 2 / 11;
+    }
+    .main {
+      background-color: rgb(36, 52, 75);
+      color: white;
+      /* grid-area: 3 / 1 / 4 / 3; */
+      grid-row: 11 / span 4;
+      grid-column: 1 / 3;
+    }
+    .extra {
+      background: teal;
+      color: white;
+      grid-area: 13 / 4 / span 2 / 5;
+    }
+    .image {
+      background: skyblue;
+      grid-area: 11 / 4 / span 2 / 4;
+    }
+    .bener {
+      /* padding: 100px; */
+      grid-row-start: 15;
+      grid-row-end: span 2;
+      grid-column-start: 1;
+      grid-column-end: -1;
+      background-color: rgb(254, 210, 105);
+    }
+
+    @media (max-width: 854px) {
+      .header {
+        grid-column: 1 / -1;
+      }
+      .hero {
+        grid-row: 2 / 7;
+      }
+      .menu{
+        grid-area: 7 / 1 / -1 / 2;
+      }
+      .main {
+        grid-area: 7 / 2 / span 5 / span 3;
+      }
+      .bener {
+        grid-area: 12 / 2 / span 3 / 5;
+      }
+      .extra {
+        grid-area: 15 / 2 / 17 / -2;
+      }
+      .image {
+        grid-area: 15 / 4 / -1 / 5;
+      }
+    }
+
+    @media (max-width: 407px) {
+      .container{
+        display: flex;
+        flex-direction: column;
+      }
+      .i {
+        /* padding: 35px 0; */
+        flex: 1;
+      }
+      .hero, .main {
+        flex: 3;
+      }
+      .bener, .extra, .image {
+        flex: 2;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="i header"> header</div>
+    <div class="i menu"> menu</div>
+    <div class="i hero"> hero</div>
+    <div class="i main"> main</div>
+    <div class="i bener"> baner</div>
+    <div class="i extra"> extra</div>
+    <div class="i image"> image</div>
+  </div>
+</body>
+</html>
